@@ -28,7 +28,7 @@ class PredictionModel:
     def predict(self):
         review = self.preprocess()
         text_vect = tfidfvect.transform([review]).toarray()
-        self.output['prediction'] = 'FAKE' if model.predict(text_vect) == 0 else 'REAL'
+        self.output['prediction'] = 'Inauthentic Content' if model.predict(text_vect) == 0 else 'Factual Content'
         return self.output
 
 
